@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders — Bean &amp; Brew</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">☕ Bean &amp; Brew</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">← Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="orders-page">
+    <h2 class="section-title">All Orders</h2>
+
+    <!-- Statistics cards -->
+    <div class="stats">
+      <div class="stat-box">
+        <span class="stat-number">{{ total_orders }}</span>
+        <span class="stat-label">Total Orders</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">${{ "%.2f"|format(total_revenue) }}</span>
+        <span class="stat-label">Total Revenue</span>
+      </div>
+    </div>
+
+    {% if orders %}
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Drink</th>
+            <th>Price</th>
+            <th>Notes</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+          <tr>
+            <td>{{ order["id"] }}</td>
+            <td>{{ order["name"] }}</td>
+            <td>{{ order["drink"] }}</td>
+            <td>${{ "%.2f"|format(order["price"]) }}</td>
+            <td>{{ order["notes"] if order["notes"] else "—" }}</td>
+            <td>
+              <form action="{{ url_for('delete_order', order_id=order['id']) }}" method="POST">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">No orders yet. Be the first to order! ☕</p>
+    {% endif %}
+
+    <div style="text-align:center; margin-top:30px;">
+      <a href="{{ url_for('home') }}#order" class="btn">Place Another Order</a>
+    </div>
+
+    <p class="empty" style="margin-top:40px;">Project by Cavid and Ibad </p>
+  </section>
+
+</body>
+</html>

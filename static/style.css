@@ -1,0 +1,312 @@
+/* ===== CSS Variables (easy to change theme colors) ===== */
+:root {
+  --coffee-dark: #4b2e2e;
+  --coffee-medium: #7b4b3a;
+  --coffee-light: #c69c6d;
+  --cream: #f4ece6;
+  --text-dark: #2e2222;
+}
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--coffee-dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: var(--coffee-light);
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(75, 46, 46, 0.7), rgba(75, 46, 46, 0.7)),
+              url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200")
+              center/cover;
+  color: white;
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+/* ===== Button ===== */
+.btn {
+  display: inline-block;
+  background-color: var(--coffee-light);
+  color: var(--text-dark);
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+/* ===== Section title ===== */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: var(--coffee-dark);
+  margin: 50px 0 30px;
+}
+
+/* ===== Menu ===== */
+.menu {
+  padding: 20px 40px 60px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  width: 230px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-emoji {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: var(--coffee-medium);
+  margin-bottom: 10px;
+}
+
+.card .price {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--coffee-dark);
+}
+
+/* ===== Order form ===== */
+.order {
+  padding: 0 20px 60px;
+}
+
+.order-form {
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form label {
+  font-weight: bold;
+  margin: 12px 0 5px;
+  color: var(--coffee-medium);
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ===== Orders ===== */
+.orders-page {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.orders-table th {
+  background: var(--coffee-dark);
+  color: white;
+  padding: 12px;
+}
+
+.orders-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* ===== Delete button ===== */
+.delete-btn {
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #922b21;
+}
+
+/* ===== Testimonials ===== */
+.testimonials {
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== About ===== */
+.about {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--coffee-dark);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* ===== WEATHER BOX (FIXED + CENTERED) ===== */
+/* ===== WEATHER BOX (AI / ROBOT STYLE) ===== */
+.weather-box {
+  max-width: 520px;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+
+  /* AI style gradient */
+  background: linear-gradient(135deg, #ffffff, #f4ece6);
+
+  /* glow effect */
+  box-shadow: 0 8px 25px rgba(75, 46, 46, 0.15);
+
+  /* subtle border */
+  border: 1px solid rgba(123, 75, 58, 0.2);
+
+  /* smooth animation feel */
+  transition: transform 0.3s ease;
+}
+
+.weather-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Title (AI vibe) */
+.weather-box h3 {
+  font-size: 20px;
+  color: var(--coffee-dark);
+  margin-bottom: 10px;
+}
+
+.weather-box h4 {
+  font-size: 16px;
+  color: var(--coffee-medium);
+  margin-bottom: 15px;
+}
+
+/* List */
+.weather-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* AI coffee items */
+.weather-box li {
+  background: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+
+  width: fit-content;
+
+  font-weight: bold;
+  color: var(--coffee-dark);
+
+  border: 1px solid rgba(123, 75, 58, 0.15);
+
+  /* soft glow */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+
+  transition: all 0.2s ease;
+}
+
+.weather-box li:hover {
+  transform: scale(1.05);
+  background: var(--coffee-light);
+  color: white;
+}
