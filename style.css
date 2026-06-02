@@ -1,0 +1,327 @@
+/* ===== CSS Variables (easy to change theme colors) ===== */
+:root {
+  --coffee-dark: #4b2e2e;
+  --coffee-medium: #7b4b3a;
+  --coffee-light: #c69c6d;
+  --cream: #f4ece6;
+  --text-dark: #2e2222;
+}
+
+/* ===== Reset some default browser styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+/* ===== Navigation bar (uses flexbox) ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--coffee-dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: var(--coffee-light);
+}
+
+/* ===== Hero section ===== */
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(75, 46, 46, 0.7), rgba(75, 46, 46, 0.7)),
+              url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200")
+              center/cover;
+  color: white;
+  padding: 20px;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+/* ===== Button ===== */
+.btn {
+  display: inline-block;
+  background-color: var(--coffee-light);
+  color: var(--text-dark);
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+/* ===== Section titles ===== */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: var(--coffee-dark);
+  margin: 50px 0 30px;
+}
+
+/* ===== Menu cards (flexbox grid) ===== */
+.menu {
+  padding: 20px 40px 60px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  width: 230px;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-emoji {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: var(--coffee-medium);
+  margin-bottom: 10px;
+}
+
+.card .price {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--coffee-dark);
+  font-size: 18px;
+}
+
+/* ===== Order form ===== */
+.order {
+  padding: 0 20px 60px;
+}
+
+.order-form {
+  max-width: 450px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form label {
+  font-weight: bold;
+  margin: 12px 0 5px;
+  color: var(--coffee-medium);
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.order-form .btn {
+  margin-top: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ===== Orders page ===== */
+.orders-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table th {
+  background-color: var(--coffee-dark);
+  color: white;
+}
+
+.orders-table tr:hover td {
+  background-color: var(--cream);
+}
+
+.empty {
+  text-align: center;
+  font-size: 18px;
+  color: var(--coffee-medium);
+}
+
+/* ===== Statistics boxes (orders page) ===== */
+.stats {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background-color: var(--coffee-medium);
+  color: white;
+  padding: 25px 40px;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+  display: block;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: var(--cream);
+}
+
+/* ===== Delete button ===== */
+.delete-btn {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #922b21;
+}
+
+/* ===== Testimonials ===== */
+.testimonials {
+  padding: 0 40px 40px;
+}
+
+.testimonials .quote {
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.testimonials .stars {
+  color: #f5b301;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ===== About section ===== */
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: var(--coffee-dark);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer h2 {
+  margin-bottom: 15px;
+}
+
+.footer .copy {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--coffee-light);
+}
+
+/* ===== Responsive design (mobile friendly) ===== */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-text h2 {
+    font-size: 32px;
+  }
+}
